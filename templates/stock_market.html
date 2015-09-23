@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<title>Home Page</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/touch/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/touch/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/touch/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="image/touch/apple-touch-icon-57x57-precomposed.png">
+<link rel="shortcut icon" href="image/touch/apple-touch-icon.png">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-override.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='lib/c3js/c3.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/library.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/jqueryui/js/jquery-ui-1.10.4.custom.min.js') }}"></script>
+</head>
+<body id="body">
+
+		<!-- Header -->
+		<header class="navbar main-header">
+		  		<a class="navbar-brand" href="index.html">
+                    Data Prediction
+                </a>
+               <ul class="nav navbar-nav navbar-left sidebar-toggle-ul">
+                    <li class="navbar-main hidden-lg hidden-md">
+                        <a href="javascript:void(0);" id="sidebar-toggle">
+                            <span class="meta">
+                                <span class="icon"><i class="fa fa-bars"></i></span>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-main hidden-sm hidden-xs">
+                        <a href="javascript:void(0);" id="sidebar-collapse">
+                            <span class="meta">
+                                <span class="icon"><i class="fa fa-outdent"></i></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+				<ul class="nav navbar-nav navbar-left">
+
+					<form class="navbar-form navbar-left margintop" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control search" placeholder="Search">
+				        </div>
+			        </form>
+				</ul>
+
+
+
+                 
+	   </header>
+
+
+        <div class="sidebar sidebar-left">
+        	<div class="content">
+	             <ul class="nav nav-tabs nav-justified sidetabs">
+				  <li class="active"><a href="#home" data-toggle="tab" ><i class="fa fa-compass"></i> </a></li>
+				  <li><a href="#users" data-toggle="tab"><i class="fa fa-user"></i> </a></li>
+				  <li><a href="#help" data-toggle="tab"><i class="fa fa-envelope-o"></i></a></li>
+				</ul>
+
+				<div class="tab-content sidetabs">
+				  <div class="tab-pane active" id="home">
+					  	 <ul class="sidemenu">
+						    <li class="sidebar-header">Types</li>
+						    
+						    <li>
+						        <a href="javascript:void(0);">
+						            <span class="icon"><i class="fa fa-sitemap"></i></span>
+						            <span class="name">Supervised Learning</span>
+						            <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
+						        </a>
+						        <ul class="sidebar-dropdown">
+						        		<li class="sidebar-dropdown-title"><p>Supervised Learning</p></li>
+						        		<li><a href="/">Regression</a></li>
+			                            
+			                            <li><a href="nearest_neighbour">Nearest Neighbour</a></li>
+			                            <li><a href="neural_network">Neural Networks</a></li>
+			                            <li><a href="svm">Support Vector Machines</a></li>
+			                    </ul>
+						    </li>
+						    
+						    <li>
+						        <a href="javascript:void(0);">
+						            <span class="icon"><i class="fa fa-puzzle-piece"></i></span>
+						            <span class="name">Unsupervised Learning</span>
+						            <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
+						        </a>
+						        <ul class="sidebar-dropdown">
+						        		<li class="sidebar-dropdown-title"><p>Unsupervised Learning</p></li>
+						        		<li><a href="clustering">Clustering</a></li>
+			                            
+			                    </ul>
+						    </li>
+
+						    <li class="active">
+						        <a href="javascript:void(0);">
+						            <span class="icon"><i class="fa fa-list"></i></span>
+						            <span class="name">Miscellaneous Prediction</span>
+						            <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
+						        </a>
+						        <ul class="sidebar-dropdown">
+						        		<li class="sidebar-dropdown-title"><p>Miscellaneous Prediction</p></li>
+						        		<li><a class="active" href="stock_market">Stock Market Structure</a></li>
+			                            <li><a href="digits_recognition">Digits Recognition</a></li>
+			                            
+			                    </ul>
+						    </li>
+
+					</ul>
+				  </div>
+
+				  <div class="tab-pane" id="users">
+					  <ul class="sidemenu">
+						    <li class="sidebar-header">Users</li>
+						    <li class="active">
+						        <a href="index.html">
+						            <span class="icon"><i class="fa fa-home"></i></span>
+						            <span class="name">Users</span>
+						            <span class="number pull-right"><span class="label label-danger">5</span></span>
+						        </a>
+								</li>
+					  </ul>
+				  </div>
+
+				  <div class="tab-pane" id="help">
+				  		<ul class="sidemenu">
+						    <li class="sidebar-header">Help</li>
+						    <li>
+						        <a href="mail-inbox.html">
+						            <span class="icon"><i class="fa fa-inbox"></i></span>
+						            <span class="name">Inbox</span>
+						            <span class="number pull-right"><span class="label label-success">10</span></span>
+						        </a>
+						    </li>
+						    <li>
+						        <a href="mail-compose.html">
+						            <span class="icon"><i class="fa fa-edit"></i></span>
+						            <span class="name">Compose</span>
+						        </a>
+						    </li>
+						    <li>
+						        <a href="mail-view.html">
+						            <span class="icon"><i class="fa fa-file-o"></i></span>
+						            <span class="name">View</span>
+						        </a>
+						    </li>
+				  		</ul>
+				  </div>
+				</div>
+        	</div>
+        </div>
+		<!-- Header -->
+          <section id="main-wrapper">
+			<h3 class="subtitle">Stock Market Structure</h3>
+          <hr/>
+          
+
+          <div class="row">
+			  <div class="col-md-12">
+				  	<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Predicting which company stocks depend on another</h3>
+					    			<div class="panel-options pull-right">
+                                           <i class="fa fa-chevron-down"></i>
+                                           <i class="fa fa-times"></i>
+                                      </div>
+					  </div>
+					  <div class="panel-body">
+
+					    <img src="{{ url_for('static',filename='img/plot_stock_market_1.png') }}"/>
+					    <hr/>
+					    <h3>Output:</h3>
+					    <h4 style="color:black;">
+
+					    		<li>Cluster 1: Pepsi, Coca Cola, Kellogg</li>
+								<li>Cluster 2: Walgreen, CVS</li>
+								<li>Cluster 3: Apple, Amazon, Yahoo</li>
+								<li>Cluster 4: GlaxoSmithKline, Novartis, Sanofi-Aventis</li>
+								<li>Cluster 5: Comcast, Time Warner, Cablevision</li>
+								<li>Cluster 6: ConocoPhillips, Chevron, Total, Valero Energy, Exxon</li>
+								<li>Cluster 7: Kraft Foods</li>
+								<li>Cluster 8: Navistar, Sony, Marriott, Caterpillar, Canon, Toyota, Honda, Mitsubishi, Xerox, Unilever</li>
+								<li>Cluster 9: Kimberly-Clark, Colgate-Palmolive, Procter Gamble</li>
+								<li>Cluster 10: American express, Ryder, Goldman Sachs, Wal-Mart, General Electrics, Pfizer, 3M</li>
+								<li>Cluster 11: Microsoft, SAP, IBM, Texas instruments, HP, Dell, Cisco</li>
+								<li>Cluster 12: Raytheon, Boeing, Lookheed Martin, General Dynamics, Northrop Grumman</li>
+					    </h4>
+					    <br>
+					    <h4>Code that outputs the following figure.</h4>
+					    <pre>
+
+import datetime
+
+import numpy as np
+import pylab as pl
+from matplotlib import finance
+from matplotlib.collections import LineCollection
+
+from sklearn import cluster, covariance, manifold
+
+###############################################################################
+# Retrieve the data from Internet
+
+# Choose a time period reasonnably calm (not too long ago so that we get
+# high-tech firms, and before the 2008 crash)
+d1 = datetime.datetime(2003, 01, 01)
+d2 = datetime.datetime(2008, 01, 01)
+
+symbol_dict = {
+        'TOT': 'Total',
+        'XOM': 'Exxon',
+        'CVX': 'Chevron',
+        'COP': 'ConocoPhillips',
+        'VLO': 'Valero Energy',
+        'MSFT': 'Microsoft',
+        'IBM': 'IBM',
+        'TWX': 'Time Warner',
+        'CMCSA': 'Comcast',
+        'CVC': 'Cablevision',
+        'YHOO': 'Yahoo',
+        'DELL': 'Dell',
+        'HPQ': 'HP',
+        'AMZN': 'Amazon',
+        'TM': 'Toyota',
+        'CAJ': 'Canon',
+        'MTU': 'Mitsubishi',
+        'SNE': 'Sony',
+        'F': 'Ford',
+        'HMC': 'Honda',
+        'NAV': 'Navistar',
+        'NOC': 'Northrop Grumman',
+        'BA': 'Boeing',
+        'KO': 'Coca Cola',
+        'MMM': '3M',
+        'MCD': 'Mc Donalds',
+        'PEP': 'Pepsi',
+        'KFT': 'Kraft Foods',
+        'K': 'Kellogg',
+        'UN': 'Unilever',
+        'MAR': 'Marriott',
+        'PG': 'Procter Gamble',
+        'CL': 'Colgate-Palmolive',
+        'NWS': 'News Corp',
+        'GE': 'General Electrics',
+        'WFC': 'Wells Fargo',
+        'JPM': 'JPMorgan Chase',
+        'AIG': 'AIG',
+        'AXP': 'American express',
+        'BAC': 'Bank of America',
+        'GS': 'Goldman Sachs',
+        'AAPL': 'Apple',
+        'SAP': 'SAP',
+        'CSCO': 'Cisco',
+        'TXN': 'Texas instruments',
+        'XRX': 'Xerox',
+        'LMT': 'Lookheed Martin',
+        'WMT': 'Wal-Mart',
+        'WAG': 'Walgreen',
+        'HD': 'Home Depot',
+        'GSK': 'GlaxoSmithKline',
+        'PFE': 'Pfizer',
+        'SNY': 'Sanofi-Aventis',
+        'NVS': 'Novartis',
+        'KMB': 'Kimberly-Clark',
+        'R': 'Ryder',
+        'GD': 'General Dynamics',
+        'RTN': 'Raytheon',
+        'CVS': 'CVS',
+        'CAT': 'Caterpillar',
+        'DD': 'DuPont de Nemours',
+    }
+
+symbols, names = np.array(symbol_dict.items()).T
+
+quotes = [finance.quotes_historical_yahoo(symbol, d1, d2, asobject=True)
+          for symbol in symbols]
+
+open = np.array([q.open for q in quotes]).astype(np.float)
+close = np.array([q.close for q in quotes]).astype(np.float)
+
+# The daily variations of the quotes are what carry most information
+variation = close - open
+
+###############################################################################
+# Learn a graphical structure from the correlations
+edge_model = covariance.GraphLassoCV()
+
+# standardize the time series: using correlations rather than covariance
+# is more efficient for structure recovery
+X = variation.copy().T
+X /= X.std(axis=0)
+edge_model.fit(X)
+
+###############################################################################
+# Cluster using affinity propagation
+
+_, labels = cluster.affinity_propagation(edge_model.covariance_)
+n_labels = labels.max()
+
+for i in range(n_labels + 1):
+    print 'Cluster %i: %s' % ((i + 1), ', '.join(names[labels == i]))
+
+###############################################################################
+# Find a low-dimension embedding for visualization: find the best position of
+# the nodes (the stocks) on a 2D plane
+
+# We use a dense eigen_solver to achieve reproducibility (arpack is
+# initiated with random vectors that we don't control). In addition, we
+# use a large number of neighbors to capture the large-scale structure.
+node_position_model = manifold.LocallyLinearEmbedding(
+    n_components=2, eigen_solver='dense', n_neighbors=6)
+
+embedding = node_position_model.fit_transform(X.T).T
+
+###############################################################################
+# Visualization
+pl.figure(1, facecolor='w', figsize=(10, 8))
+pl.clf()
+ax = pl.axes([0., 0., 1., 1.])
+pl.axis('off')
+
+# Display a graph of the partial correlations
+partial_correlations = edge_model.precision_.copy()
+d = 1 / np.sqrt(np.diag(partial_correlations))
+partial_correlations *= d
+partial_correlations *= d[:, np.newaxis]
+non_zero = (np.abs(np.triu(partial_correlations, k=1)) > 0.02)
+
+# Plot the nodes using the coordinates of our embedding
+pl.scatter(embedding[0], embedding[1], s=100 * d ** 2, c=labels,
+           cmap=pl.cm.spectral)
+
+# Plot the edges
+start_idx, end_idx = np.where(non_zero)
+#a sequence of (*line0*, *line1*, *line2*), where::
+#            linen = (x0, y0), (x1, y1), ... (xm, ym)
+segments = [[embedding[:, start], embedding[:, stop]]
+            for start, stop in zip(start_idx, end_idx)]
+values = np.abs(partial_correlations[non_zero])
+lc = LineCollection(segments,
+                    zorder=0, cmap=pl.cm.hot_r,
+                    norm=pl.Normalize(0, .7 * values.max()))
+lc.set_array(values)
+lc.set_linewidths(15 * values)
+ax.add_collection(lc)
+
+# Add a label to each node. The challenge here is that we want to
+# position the labels to avoid overlap with other labels
+for index, (name, label, (x, y)) in enumerate(
+    zip(names, labels, embedding.T)):
+
+    dx = x - embedding[0]
+    dx[index] = 1
+    dy = y - embedding[1]
+    dy[index] = 1
+    this_dx = dx[np.argmin(np.abs(dy))]
+    this_dy = dy[np.argmin(np.abs(dx))]
+    if this_dx > 0:
+        horizontalalignment = 'left'
+        x = x + .002
+    else:
+        horizontalalignment = 'right'
+        x = x - .002
+    if this_dy > 0:
+        verticalalignment = 'bottom'
+        y = y + .002
+    else:
+        verticalalignment = 'top'
+        y = y - .002
+    pl.text(x, y, name, size=10,
+            horizontalalignment=horizontalalignment,
+            verticalalignment=verticalalignment,
+            bbox=dict(facecolor='w',
+                      edgecolor=pl.cm.spectral(label / float(n_labels)),
+                      alpha=.6))
+
+pl.xlim(embedding[0].min() - .15 * embedding[0].ptp(),
+        embedding[0].max() + .10 * embedding[0].ptp(),)
+pl.ylim(embedding[1].min() - .03 * embedding[1].ptp(),
+        embedding[1].max() + .03 * embedding[1].ptp())
+
+pl.show()
+
+					    </pre>
+
+
+					  </div>
+					</div>
+				</div>
+
+			  
+          	</div>
+
+
+
+		  </section>
+
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/c3js/d3.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/c3js/c3.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/c3charts.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/customscroll/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/jquery-easing/jquery.easing.1.3.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

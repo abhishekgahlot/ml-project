@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<title>Home Page</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="image/touch/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/touch/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/touch/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="image/touch/apple-touch-icon-57x57-precomposed.png">
+<link rel="shortcut icon" href="image/touch/apple-touch-icon.png">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-override.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='lib/c3js/c3.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/library.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/jqueryui/js/jquery-ui-1.10.4.custom.min.js') }}"></script>
+
+<style type="text/css">
+      #imageView { border: 1px solid #000; }
+      #imageTemp { position: absolute; top: 56px; left: 32px; }     
+</style>
+</head>
+<body id="body">
+
+		<!-- Header -->
+		<header class="navbar main-header">
+		  		<a class="navbar-brand" href="index.html">
+                    Data Prediction
+                </a>
+               <ul class="nav navbar-nav navbar-left sidebar-toggle-ul">
+                    <li class="navbar-main hidden-lg hidden-md">
+                        <a href="javascript:void(0);" id="sidebar-toggle">
+                            <span class="meta">
+                                <span class="icon"><i class="fa fa-bars"></i></span>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-main hidden-sm hidden-xs">
+                        <a href="javascript:void(0);" id="sidebar-collapse">
+                            <span class="meta">
+                                <span class="icon"><i class="fa fa-outdent"></i></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+				<ul class="nav navbar-nav navbar-left">
+
+					<form class="navbar-form navbar-left margintop" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control search" placeholder="Search">
+				        </div>
+			        </form>
+				</ul>
+
+
+
+                 
+	   </header>
+
+
+        <div class="sidebar sidebar-left">
+        	<div class="content">
+	             <ul class="nav nav-tabs nav-justified sidetabs">
+				  <li class="active"><a href="#home" data-toggle="tab" ><i class="fa fa-compass"></i> </a></li>
+				  <li><a href="#users" data-toggle="tab"><i class="fa fa-user"></i> </a></li>
+				  <li><a href="#help" data-toggle="tab"><i class="fa fa-envelope-o"></i></a></li>
+				</ul>
+
+				<div class="tab-content sidetabs">
+				  <div class="tab-pane active" id="home">
+					  	 <ul class="sidemenu">
+						    <li class="sidebar-header">Types</li>
+						    
+						    <li class="active">
+						        <a href="javascript:void(0);">
+						            <span class="icon"><i class="fa fa-sitemap"></i></span>
+						            <span class="name">Supervised Learning</span>
+						            <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
+						        </a>
+						        <ul class="sidebar-dropdown">
+						        		<li class="sidebar-dropdown-title"><p>Supervised Learning</p></li>
+						        		<li><a href="/">Regression</a></li>
+			                            <li><a class="active" href="morris-charts.html">Naive Bayes Classification</a></li>
+			                            <li><a href="nearest_neighbour">Nearest Neighbour</a></li>
+			                            <li><a href="neural_network">Neural Networks</a></li>
+			                            <li><a href="svm">Support Vector Machines</a></li>
+			                    </ul>
+						    </li>
+						    
+						    <li>
+						        <a href="javascript:void(0);">
+						            <span class="icon"><i class="fa fa-puzzle-piece"></i></span>
+						            <span class="name">Unsupervised Learning</span>
+						            <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
+						        </a>
+						        <ul class="sidebar-dropdown">
+						        		<li class="sidebar-dropdown-title"><p>Unsupervised Learning</p></li>
+						        		<li><a href="clustering">Clustering</a></li>
+			                            <li><a href="digits_recognition">Digits Recognition</a></li>
+			                            
+			                    </ul>
+						    </li>
+
+						    <li>
+						        <a href="javascript:void(0);">
+						            <span class="icon"><i class="fa fa-list"></i></span>
+						            <span class="name">Miscellaneous Prediction</span>
+						            <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
+						        </a>
+						        <ul class="sidebar-dropdown">
+						        		<li class="sidebar-dropdown-title"><p>Miscellaneous Prediction</p></li>
+						        		<li><a href="stock_market">Stock Market Structure</a></li>
+			                            <li><a href="digits_recognition">Digits Recognition</a></li>
+			                            
+			                    </ul>
+						    </li>
+
+					</ul>
+				  </div>
+
+				  <div class="tab-pane" id="users">
+					  <ul class="sidemenu">
+						    <li class="sidebar-header">Users</li>
+						    <li class="active">
+						        <a href="index.html">
+						            <span class="icon"><i class="fa fa-home"></i></span>
+						            <span class="name">Users</span>
+						            <span class="number pull-right"><span class="label label-danger">5</span></span>
+						        </a>
+								</li>
+					  </ul>
+				  </div>
+
+				  <div class="tab-pane" id="help">
+				  		<ul class="sidemenu">
+						    <li class="sidebar-header">Help</li>
+						    <li>
+						        <a href="mail-inbox.html">
+						            <span class="icon"><i class="fa fa-inbox"></i></span>
+						            <span class="name">Inbox</span>
+						            <span class="number pull-right"><span class="label label-success">10</span></span>
+						        </a>
+						    </li>
+						    <li>
+						        <a href="mail-compose.html">
+						            <span class="icon"><i class="fa fa-edit"></i></span>
+						            <span class="name">Compose</span>
+						        </a>
+						    </li>
+						    <li>
+						        <a href="mail-view.html">
+						            <span class="icon"><i class="fa fa-file-o"></i></span>
+						            <span class="name">View</span>
+						        </a>
+						    </li>
+				  		</ul>
+				  </div>
+				</div>
+        	</div>
+        </div>
+		<!-- Header -->
+          <section id="main-wrapper">
+			<h3 class="subtitle">Data Prediction using Machine Learning</h3>
+          <hr/>
+          
+
+          <div class="row">
+			  <div class="col-md-12">
+				  	<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Housing Prices Prediction</h3>
+					    			<div class="panel-options pull-right">
+                                           <i class="fa fa-chevron-down"></i>
+                                           <i class="fa fa-times"></i>
+                                      </div>
+					  </div>
+					  <div class="panel-body">
+					 
+				        
+					  </div>
+					</div>
+				</div>
+
+			  
+          	</div>
+
+
+
+		  </section>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/customscroll/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/jquery-easing/jquery.easing.1.3.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
